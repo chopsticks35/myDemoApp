@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-calm">
+<!--          in header - buttons take on header styling-->
+          <button class="button">Welcome</button>
+<!--          or override with other proerties -->
+          <button class="button button-royal">Home</button>
+        <h1 class="title">My App Header</h1>
+      </ion-header-bar>
+        <div class="bar bar-subheader">
+            <h2>Sub Header</h2>
+        </div>
+      <ion-content class="padding has-subheader">
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!--          can also use a anchor and href with button      -->
+<!--          button-block full lenght of container                  -->
+<!--          also button small and large           -->
+          <button class="button">Click me!</button>
+          <button class="button button-small">Click me!</button>
+          <button class="button button-outline button-large">Click me!</button>
+          <button class="button button-block">Click me!</button>
+          <button class="button button-block button-royal">Click me!</button>
+          <button class="button button-clear">Click me!</button>
+          
+<!--          for button bar - in the content body - for footer use tabs-->
+          <div class="button-bar">
+              <button class="button button-positive">Click me!</button>
+              <button class="button button-positive">Click me!</button>
+              <button class="button button-positive">Click me!</button>
+          </div>
+          
+        
+      </ion-content>
+        
+        <ion-footer-bar class="bar-calm">
+        <h1 class="title">Footer</h1>
+      </ion-footer-bar>
+    </ion-pane>
+  </body>
+</html>
