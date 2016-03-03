@@ -18,6 +18,10 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+<!--    google hangout api  -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
   </head>
@@ -32,6 +36,7 @@
           <!--          or override with other proerties -->
           <button class=" icon ion-home button "></button>
       </ion-header-bar>
+
 
 <!--        use tabs to create buttonsin footer - see tabs sect in CSS and JS documentation - use JS when sorking with anhgular-->
 <!--        <div class="tabs tabs-calm">-->
@@ -56,8 +61,8 @@
 
 <!--
         <ion-tab badge="1" badge-style="badge-assertive" icon="ion-home" title="Home"></ion-tab>                <ion-tab icon="ion-person" title="About"></ion-tab>-->
-<!--          <ion-tab icon="ion-calendar" title="Calendar"></ion-tab>-->-->
--->
+<!--          <ion-tab icon="ion-calendar" title="Calendar"></ion-tab>-->--&gt;
+--&gt;
 
 <!--
 
@@ -119,15 +124,15 @@
             <div class="item item-divider">Welcome</div>
             <div class="item item-image item-body">
               <img src="img/logo.jpg" alt="Item Img">
-              <p>"True yoga is not about the shape of your body, but the shape of your life."
+              <p>&quot;True yoga is not about the shape of your body, but the shape of your life.&quot;
 
                </p>
             </div>
               <div class="item item-icon-left item-text-wrap">
-                <i class="icon ion-home>"></i>
-                “Yoga is not to be performed; yoga is to be lived. Yoga doesn’t care about what you have been; yoga cares about the person you are becoming.
+                <i class="icon ion-home&gt;"></i>
+                &#x201C;Yoga is not to be performed; yoga is to be lived. Yoga doesn&#x2019;t care about what you have been; yoga cares about the person you are becoming.
 
-                Yoga is designed for a vast and profound purpose, and for it to be truly called yoga, its essence must be embodied.”
+                Yoga is designed for a vast and profound purpose, and for it to be truly called yoga, its essence must be embodied.&#x201D;
             </div>
             <div class="list">
               <label class="item item-input">
@@ -188,8 +193,7 @@
 
             <div class="item range range-balanced">
               <i class="icon ion-sad-outline"></i>
-              <input type="range" name="feeling"
-                     min="0" max="100" value="50">
+              <input type="range" name="feeling" min="0" max="100" value="50">
               <i class="icon ion-happy"></i>
             </div>
 
@@ -208,10 +212,43 @@
 
 <!--            <div class="item isubmit buttons and item divider as footertem-input">-->
               <button class="button button-full button-positive">Sign Up</button>
-            </div>
+          </div>
+
+
+          <div class="item">
+
+          <div class="g-hangout" data-render="createhangout"></div>
+            <span class="input-label">Connect with Ti</span>
+          </div>
+
+
+            <!-- Tok Box Script  and API-->
+          <div id="myPublisherDiv"></div> 
+    <div id="subscribersDiv"></div> 
+    
+    <script src="//static.opentok.com/v2/js/opentok.min.js"></script> 
+    <script> 
+      var apiKey = '45509302';
+      var sessionId = '2_MX40NTUwOTMwMn5-MTQ1NjQyMTk1NjI1NX54dDhwc3hKQ1ZkL1Bkd1NmWFJuUElpRUZ-UH4'; 
+      var token = 'T1==cGFydG5lcl9pZD00NTUwOTMwMiZzaWc9M2M1MWVlOGM4MDNjMzBjODBhOWQ5OWJlYzhhZTQ1NjM1OTcwMWY3MTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTJfTVg0ME5UVXdPVE13TW41LU1UUTFOalF5TVRrMU5qSTFOWDU0ZERod2MzaEtRMVprTDFCa2QxTm1XRkp1VUVscFJVWi1VSDQmY3JlYXRlX3RpbWU9MTQ1Njk1Njc0MCZub25jZT0wLjkyMTE0ODU3MTM4ODM0OTQmZXhwaXJlX3RpbWU9MTQ1NzA0MzE0MA==';
+      var session = OT.initSession(apiKey, sessionId); 
+      session.on({ 
+          streamCreated: function(event) { 
+            session.subscribe(event.stream, 'subscribersDiv', {insertMode: 'append'}); 
+          } 
+      }); 
+      session.connect(token, function(error) {
+        if (error) {
+          console.log(error.message);
+        } else {
+          session.publish('myPublisherDiv', {width: 320, height: 240}); 
+        }
+      });
+    </script> 
+
             <div class="item item-divider">
               <p>
-                Copyright &copy; 2016 by Ti: The Coding Yogini.  All rights reserved.
+                Copyright &#xA9; 2016 by Ti: The Coding Yogini.  All rights reserved.
               </p>
             </div>
 
@@ -333,6 +370,6 @@
         </ion-content>
 
 
-    </ion-pane>
+    </div></ion-pane>
   </body>
 </html>
